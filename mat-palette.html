@@ -24,956 +24,6 @@ This element is used to manage the meterial palettes.
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../expandjs/expandjs.html">
 
-<style shim-shadowdom>
-
-'red-50': '#FFEBEE'
-'red-100': '#FFCDD2'
-'red-200': '#EF9A9A'
-'red-300': '#E57373'
-'red-400': '#EF5350'
-'red-500': '#F44336'
-'red-600': '#E53935'
-'red-700': '#D32F2F'
-'red-800': '#C62828'
-'red-900': '#B71C1C'
-'red-A100': '#FF8A80'
-'red-A200': '#FF5252'
-'red-A400': '#FF1744'
-'red-A700': '#D50000'
-
-'pink-50': '#FCE4EC'
-'pink-100': '#F8BBD0'
-'pink-200': '#F48FB1'
-'pink-300': '#F06292'
-'pink-400': '#EC407A'
-'pink-500': '#E91E63'
-'pink-600': '#D81B60'
-'pink-700': '#C2185B'
-'pink-800': '#AD1457'
-'pink-900': '#880E4F'
-'pink-A100': '#FF80AB'
-'pink-A200': '#FF4081'
-'pink-A400': '#F50057'
-'pink-A700': '#C51162'
-
-'purple-50': '#F3E5F5'
-'purple-100': '#E1BEE7'
-'purple-200': '#CE93D8'
-'purple-300': '#BA68C8'
-'purple-400': '#AB47BC'
-'purple-500': '#9C27B0'
-'purple-600': '#8E24AA'
-'purple-700': '#7B1FA2'
-'purple-800': '#6A1B9A'
-'purple-900': '#4A148C'
-'purple-A100': '#EA80FC'
-'purple-A200': '#E040FB'
-'purple-A400': '#D500F9'
-'purple-A700': '#AA00FF'
-
-'deep-purple-50' #EDE7F6'
-'deep-purple-100' #D1C4E9'
-'deep-purple-200' #B39DDB'
-'deep-purple-300' #9575CD'
-'deep-purple-400' #7E57C2'
-'deep-purple-500' #673AB7'
-'deep-purple-600' #5E35B1'
-'deep-purple-700' #512DA8'
-'deep-purple-800' #4527A0'
-'deep-purple-900' #311B92'
-'deep-purple-A100' #B388FF'
-'deep-purple-A200' #7C4DFF'
-'deep-purple-A400' #651FFF'
-'deep-purple-A700' #6200EA'
-
-'indigo-50': '#E8EAF6'
-'indigo-100': '#C5CAE9'
-'indigo-200': '#9FA8DA'
-'indigo-300': '#7986CB'
-'indigo-400': '#5C6BC0'
-'indigo-500': '#3F51B5'
-'indigo-600': '#3949AB'
-'indigo-700': '#303F9F'
-'indigo-800': '#283593'
-'indigo-900': '#1A237E'
-'indigo-A100': '#8C9EFF'
-'indigo-A200': '#536DFE'
-'indigo-A400': '#3D5AFE'
-'indigo-A700': '#304FFE'
-
-'blue-50': '#E3F2FD'
-'blue-100': '#BBDEFB'
-'blue-200': '#90CAF9'
-'blue-300': '#64B5F6'
-'blue-400': '#42A5F5'
-'blue-500': '#2196F3'
-'blue-600': '#1E88E5'
-'blue-700': '#1976D2'
-'blue-800': '#1565C0'
-'blue-900': '#0D47A1'
-'blue-A100': '#82B1FF'
-'blue-A200': '#448AFF'
-'blue-A400': '#2979FF'
-'blue-A700': '#2962FF'
-
-'light-blue-50': '#E1F5FE'
-'light-blue-100': '#B3E5FC'
-'light-blue-200': '#81D4FA'
-'light-blue-300': '#4FC3F7'
-'light-blue-400': '#29B6F6'
-'light-blue-500': '#03A9F4'
-'light-blue-600': '#039BE5'
-'light-blue-700': '#0288D1'
-'light-blue-800': '#0277BD'
-'light-blue-900': '#01579B'
-'light-blue-A100': '#80D8FF'
-'light-blue-A200': '#40C4FF'
-'light-blue-A400': '#00B0FF'
-'light-blue-A700': '#0091EA'
-
-'cyan-50': '#E0F7FA'
-'cyan-100': '#B2EBF2'
-'cyan-200': '#80DEEA'
-'cyan-300': '#4DD0E1'
-'cyan-400': '#26C6DA'
-'cyan-500': '#00BCD4'
-'cyan-600': '#00ACC1'
-'cyan-700': '#0097A7'
-'cyan-800': '#00838F'
-'cyan-900': '#006064'
-'cyan-A100': '#84FFFF'
-'cyan-A200': '#18FFFF'
-'cyan-A400': '#00E5FF'
-'cyan-A700': '#00B8D4'
-
-'teal-50': '#E0F2F1'
-'teal-100': '#B2DFDB'
-'teal-200': '#80CBC4'
-'teal-300': '#4DB6AC'
-'teal-400': '#26A69A'
-'teal-500': '#009688'
-'teal-600': '#00897B'
-'teal-700': '#00796B'
-'teal-800': '#00695C'
-'teal-900': '#004D40'
-'teal-A100': '#A7FFEB'
-'teal-A200': '#64FFDA'
-'teal-A400': '#1DE9B6'
-'teal-A700': '#00BFA5'
-
-'green-50': '#E8F5E9'
-'green-100': '#C8E6C9'
-'green-200': '#A5D6A7'
-'green-300': '#81C784'
-'green-400': '#66BB6A'
-'green-500': '#4CAF50'
-'green-600': '#43A047'
-'green-700': '#388E3C'
-'green-800': '#2E7D32'
-'green-900': '#1B5E20'
-'green-A100': '#B9F6CA'
-'green-A200': '#69F0AE'
-'green-A400': '#00E676'
-'green-A700': '#00C853'
-
-'light-green-50': '#F1F8E9'
-'light-green-100': '#DCEDC8'
-'light-green-200': '#C5E1A5'
-'light-green-300': '#AED581'
-'light-green-400': '#9CCC65'
-'light-green-500': '#8BC34A'
-'light-green-600': '#7CB342'
-'light-green-700': '#689F38'
-'light-green-800': '#558B2F'
-'light-green-900': '#33691E'
-'light-green-A100': '#CCFF90'
-'light-green-A200': '#B2FF59'
-'light-green-A400': '#76FF03'
-'light-green-A700': '#64DD17'
-
-'lime-50': '#F9FBE7'
-'lime-100': '#F0F4C3'
-'lime-200': '#E6EE9C'
-'lime-300': '#DCE775'
-'lime-400': '#D4E157'
-'lime-500': '#CDDC39'
-'lime-600': '#C0CA33'
-'lime-700': '#AFB42B'
-'lime-800': '#9E9D24'
-'lime-900': '#827717'
-'lime-A100': '#F4FF81'
-'lime-A200': '#EEFF41'
-'lime-A400': '#C6FF00'
-'lime-A700': '#AEEA00'
-
-'yellow-50': '#FFFDE7'
-'yellow-100': '#FFF9C4'
-'yellow-200': '#FFF59D'
-'yellow-300': '#FFF176'
-'yellow-400': '#FFEE58'
-'yellow-500': '#FFEB3B'
-'yellow-600': '#FDD835'
-'yellow-700': '#FBC02D'
-'yellow-800': '#F9A825'
-'yellow-900': '#F57F17'
-'yellow-A100': '#FFFF8D'
-'yellow-A200': '#FFFF00'
-'yellow-A400': '#FFEA00'
-'yellow-A700': '#FFD600'
-
-'amber-50': '#FFF8E1'
-'amber-100': '#FFECB3'
-'amber-200': '#FFE082'
-'amber-300': '#FFD54F'
-'amber-400': '#FFCA28'
-'amber-500': '#FFC107'
-'amber-600': '#FFB300'
-'amber-700': '#FFA000'
-'amber-800': '#FF8F00'
-'amber-900': '#FF6F00'
-'amber-A100': '#FFE57F'
-'amber-A200': '#FFD740'
-'amber-A400': '#FFC400'
-'amber-A700': '#FFAB00'
-
-'orange-50': '#FFF3E0'
-'orange-100': '#FFE0B2'
-'orange-200': '#FFCC80'
-'orange-300': '#FFB74D'
-'orange-400': '#FFA726'
-'orange-500': '#FF9800'
-'orange-600': '#FB8C00'
-'orange-700': '#F57C00'
-'orange-800': '#EF6C00'
-'orange-900': '#E65100'
-'orange-A100': '#FFD180'
-'orange-A200': '#FFAB40'
-'orange-A400': '#FF9100'
-'orange-A700': '#FF6D00'
-
-'deep-orange-50': '#FBE9E7'
-'deep-orange-100': '#FFCCBC'
-'deep-orange-200': '#FFAB91'
-'deep-orange-300': '#FF8A65'
-'deep-orange-400': '#FF7043'
-'deep-orange-500': '#FF5722'
-'deep-orange-600': '#F4511E'
-'deep-orange-700': '#E64A19'
-'deep-orange-800': '#D84315'
-'deep-orange-900': '#BF360C'
-'deep-orange-A100': '#FF9E80'
-'deep-orange-A200': '#FF6E40'
-'deep-orange-A400': '#FF3D00'
-'deep-orange-A700': '#DD2C00'
-
-'brown-50': '#EFEBE9'
-'brown-100': '#D7CCC8'
-'brown-200': '#BCAAA4'
-'brown-300': '#A1887F'
-'brown-400': '#8D6E63'
-'brown-500': '#795548'
-'brown-600': '#6D4C41'
-'brown-700': '#5D4037'
-'brown-800': '#4E342E'
-'brown-900': '#3E2723'
-
-'grey-50': '#FAFAFA'
-'grey-100': '#F5F5F5'
-'grey-200': '#EEEEEE'
-'grey-300': '#E0E0E0'
-'grey-400': '#BDBDBD'
-'grey-500': '#9E9E9E'
-'grey-600': '#757575'
-'grey-700': '#616161'
-'grey-800': '#424242'
-'grey-900': '#212121'
-
-'blue-grey-50': '#ECEFF1'
-'blue-grey-100': '#CFD8DC'
-'blue-grey-200': '#B0BEC5'
-'blue-grey-300': '#90A4AE'
-'blue-grey-400': '#78909C'
-'blue-grey-500': '#607D8B'
-'blue-grey-600': '#546E7A'
-'blue-grey-700': '#455A64'
-'blue-grey-800': '#37474F'
-'blue-grey-900': '#263238'
-
-'black': '#000000'
-'white': '#FFFFFF'
-
-
-
-    html /deep/ [foreground]:not([disabled])[background="red-50"]   { background-color: hsla(7, 89%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-100"]  { background-color: hsla(2, 84%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-200"]  { background-color: hsla(9, 86%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-300"]  { background-color: hsla(5, 86%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-400"]  { background-color: hsla(5, 79%, 58%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red"],
-    html /deep/ [foreground]:not([disabled])[background="red-500"]  { background-color: hsla(358, 79%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-600"]  { background-color: hsla(359, 80%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-700"]  { background-color: hsla(0, 81%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-800"]  { background-color: hsla(1, 84%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-900"]  { background-color: hsla(3, 89%, 36%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-100a"] { background-color: hsla(347, 100%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-200a"] { background-color: hsla(347, 100%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-400a"] { background-color: hsla(341, 100%, 59%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="red-700a"] { background-color: hsla(347, 100%, 44%, 1) !important; }
-
-    /* RED FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="red-50"]   { color: hsla(7, 89%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-100"]  { color: hsla(2, 84%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-200"]  { color: hsla(9, 86%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-300"]  { color: hsla(5, 86%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-400"]  { color: hsla(5, 79%, 58%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red"],
-    html /deep/ [foreground]:not([disabled])[color="red-500"]  { color: hsla(358, 79%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-600"]  { color: hsla(359, 80%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-700"]  { color: hsla(0, 81%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-800"]  { color: hsla(1, 84%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-900"]  { color: hsla(3, 89%, 36%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-100a"] { color: hsla(347, 100%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-200a"] { color: hsla(347, 100%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-400a"] { color: hsla(341, 100%, 59%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="red-700a"] { color: hsla(347, 100%, 44%, 1) !important; }
-
-    /* PINK BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="pink-50"]   { background-color: hsla(340, 80%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-100"]  { background-color: hsla(339, 81%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-200"]  { background-color: hsla(340, 82%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-300"]  { background-color: hsla(340, 83%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-400"]  { background-color: hsla(340, 82%, 59%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink"],
-    html /deep/ [foreground]:not([disabled])[background="pink-500"]  { background-color: hsla(340, 82%, 52%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-600"]  { background-color: hsla(338, 78%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-700"]  { background-color: hsla(336, 78%, 43%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-800"]  { background-color: hsla(334, 79%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-900"]  { background-color: hsla(328, 81%, 29%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-100a"] { background-color: hsla(340, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-200a"] { background-color: hsla(340, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-400a"] { background-color: hsla(339, 100%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="pink-700a"] { background-color: hsla(333, 84%, 42%, 1) !important; }
-
-    /* PINK FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="pink-50"]   { color: hsla(340, 80%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-100"]  { color: hsla(339, 81%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-200"]  { color: hsla(340, 82%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-300"]  { color: hsla(340, 83%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-400"]  { color: hsla(340, 82%, 59%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink"],
-    html /deep/ [foreground]:not([disabled])[color="pink-500"]  { color: hsla(340, 82%, 52%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-600"]  { color: hsla(338, 78%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-700"]  { color: hsla(336, 78%, 43%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-800"]  { color: hsla(334, 79%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-900"]  { color: hsla(328, 81%, 29%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-100a"] { color: hsla(340, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-200a"] { color: hsla(340, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-400a"] { color: hsla(339, 100%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="pink-700a"] { color: hsla(333, 84%, 42%, 1) !important; }
-
-    /* PURPLE BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="purple-50"]   { background-color: hsla(292, 44%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-100"]  { background-color: hsla(291, 46%, 83%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-200"]  { background-color: hsla(291, 47%, 71%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-300"]  { background-color: hsla(291, 47%, 60%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-400"]  { background-color: hsla(291, 47%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple"],
-    html /deep/ [foreground]:not([disabled])[background="purple-500"]  { background-color: hsla(291, 64%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-600"]  { background-color: hsla(287, 65%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-700"]  { background-color: hsla(282, 68%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-800"]  { background-color: hsla(277, 70%, 35%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-900"]  { background-color: hsla(267, 75%, 31%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-100a"] { background-color: hsla(291, 95%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-200a"] { background-color: hsla(291, 96%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-400a"] { background-color: hsla(291, 100%, 49%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="purple-700a"] { background-color: hsla(280, 100%, 50%, 1) !important; }
-
-    /* PURPLE FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="purple-50"]   { color: hsla(292, 44%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-100"]  { color: hsla(291, 46%, 83%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-200"]  { color: hsla(291, 47%, 71%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-300"]  { color: hsla(291, 47%, 60%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-400"]  { color: hsla(291, 47%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple"],
-    html /deep/ [foreground]:not([disabled])[color="purple-500"]  { color: hsla(291, 64%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-600"]  { color: hsla(287, 65%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-700"]  { color: hsla(282, 68%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-800"]  { color: hsla(277, 70%, 35%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-900"]  { color: hsla(267, 75%, 31%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-100a"] { color: hsla(291, 95%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-200a"] { color: hsla(291, 96%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-400a"] { color: hsla(291, 100%, 49%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="purple-700a"] { color: hsla(280, 100%, 50%, 1) !important; }
-
-    /* DEEP PURPLE BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-50"]   { background-color: hsla(264, 45%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-100"]  { background-color: hsla(261, 46%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-200"]  { background-color: hsla(261, 46%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-300"]  { background-color: hsla(262, 47%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-400"]  { background-color: hsla(262, 47%, 55%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple"],
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-500"]  { background-color: hsla(262, 52%, 47%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-600"]  { background-color: hsla(260, 54%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-700"]  { background-color: hsla(258, 58%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-800"]  { background-color: hsla(255, 61%, 39%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-900"]  { background-color: hsla(251, 69%, 34%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-100a"] { background-color: hsla(262, 100%, 77%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-200a"] { background-color: hsla(256, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-400a"] { background-color: hsla(259, 100%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-purple-700a"] { background-color: hsla(265, 100%, 46%, 1) !important; }
-
-    /* DEEP PURPLE FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-50"]   { color: hsla(264, 45%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-100"]  { color: hsla(261, 46%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-200"]  { color: hsla(261, 46%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-300"]  { color: hsla(262, 47%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-400"]  { color: hsla(262, 47%, 55%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple"],
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-500"]  { color: hsla(262, 52%, 47%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-600"]  { color: hsla(260, 54%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-700"]  { color: hsla(258, 58%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-800"]  { color: hsla(255, 61%, 39%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-900"]  { color: hsla(251, 69%, 34%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-100a"] { color: hsla(262, 100%, 77%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-200a"] { color: hsla(256, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-400a"] { color: hsla(259, 100%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-purple-700a"] { color: hsla(265, 100%, 46%, 1) !important; }
-
-    /* INDIGO BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="indigo-50"]   { background-color: hsla(231, 44%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-100"]  { background-color: hsla(232, 45%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-200"]  { background-color: hsla(231, 44%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-300"]  { background-color: hsla(230, 44%, 64%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-400"]  { background-color: hsla(231, 44%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo"],
-    html /deep/ [foreground]:not([disabled])[background="indigo-500"]  { background-color: hsla(231, 48%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-600"]  { background-color: hsla(232, 50%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-700"]  { background-color: hsla(232, 54%, 41%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-800"]  { background-color: hsla(233, 57%, 37%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-900"]  { background-color: hsla(235, 66%, 30%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-100a"] { background-color: hsla(231, 100%, 77%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-200a"] { background-color: hsla(231, 99%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-400a"] { background-color: hsla(231, 99%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="indigo-700a"] { background-color: hsla(231, 99%, 59%, 1) !important; }
-
-    /* INDIGO FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="indigo-50"]   { color: hsla(231, 44%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-100"]  { color: hsla(232, 45%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-200"]  { color: hsla(231, 44%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-300"]  { color: hsla(230, 44%, 64%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-400"]  { color: hsla(231, 44%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo"],
-    html /deep/ [foreground]:not([disabled])[color="indigo-500"]  { color: hsla(231, 48%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-600"]  { color: hsla(232, 50%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-700"]  { color: hsla(232, 54%, 41%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-800"]  { color: hsla(233, 57%, 37%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-900"]  { color: hsla(235, 66%, 30%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-100a"] { color: hsla(231, 100%, 77%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-200a"] { color: hsla(231, 99%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-400a"] { color: hsla(231, 99%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="indigo-700a"] { color: hsla(231, 99%, 59%, 1) !important; }
-
-    /* BLUE BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="blue-50"]   { background-color: hsla(235, 85%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-100"]  { background-color: hsla(229, 100%, 91%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-200"]  { background-color: hsla(228, 100%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-300"]  { background-color: hsla(228, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-400"]  { background-color: hsla(228, 99%, 72%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue"],
-    html /deep/ [foreground]:not([disabled])[background="blue-500"]  { background-color: hsla(228, 97%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-600"]  { background-color: hsla(229, 83%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-700"]  { background-color: hsla(230, 70%, 57%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-800"]  { background-color: hsla(231, 60%, 52%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-900"]  { background-color: hsla(235, 62%, 43%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-100a"] { background-color: hsla(227, 100%, 83%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-200a"] { background-color: hsla(227, 100%, 70%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-400a"] { background-color: hsla(227, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-700a"] { background-color: hsla(231, 100%, 65%, 1) !important; }
-
-    /* BLUE FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="blue-50"]   { color: hsla(235, 85%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-100"]  { color: hsla(229, 100%, 91%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-200"]  { color: hsla(228, 100%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-300"]  { color: hsla(228, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-400"]  { color: hsla(228, 99%, 72%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue"],
-    html /deep/ [foreground]:not([disabled])[color="blue-500"]  { color: hsla(228, 97%, 66%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-600"]  { color: hsla(229, 83%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-700"]  { color: hsla(230, 70%, 57%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-800"]  { color: hsla(231, 60%, 52%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-900"]  { color: hsla(235, 62%, 43%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-100a"] { color: hsla(227, 100%, 83%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-200a"] { color: hsla(227, 100%, 70%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-400a"] { color: hsla(227, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-700a"] { color: hsla(231, 100%, 65%, 1) !important; }
-
-    /* LIGHT BLUE BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="light-blue-50"]   { background-color: hsla(199, 94%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-100"]  { background-color: hsla(199, 92%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-200"]  { background-color: hsla(199, 92%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-300"]  { background-color: hsla(199, 91%, 64%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-400"]  { background-color: hsla(199, 92%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue"],
-    html /deep/ [foreground]:not([disabled])[background="light-blue-500"]  { background-color: hsla(199, 98%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-600"]  { background-color: hsla(200, 97%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-700"]  { background-color: hsla(201, 98%, 41%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-800"]  { background-color: hsla(202, 98%, 37%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-900"]  { background-color: hsla(206, 99%, 31%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-100a"] { background-color: hsla(198, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-200a"] { background-color: hsla(199, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-400a"] { background-color: hsla(199, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-blue-700a"] { background-color: hsla(203, 100%, 46%, 1) !important; }
-
-    /* LIGHT BLUE FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="light-blue-50"]   { color: hsla(199, 94%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-100"]  { color: hsla(199, 92%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-200"]  { color: hsla(199, 92%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-300"]  { color: hsla(199, 91%, 64%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-400"]  { color: hsla(199, 92%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue"],
-    html /deep/ [foreground]:not([disabled])[color="light-blue-500"]  { color: hsla(199, 98%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-600"]  { color: hsla(200, 97%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-700"]  { color: hsla(201, 98%, 41%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-800"]  { color: hsla(202, 98%, 37%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-900"]  { color: hsla(206, 99%, 31%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-100a"] { color: hsla(198, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-200a"] { color: hsla(199, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-400a"] { color: hsla(199, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-blue-700a"] { color: hsla(203, 100%, 46%, 1) !important; }
-
-    /* CYAN BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="cyan-50"]   { background-color: hsla(187, 72%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-100"]  { background-color: hsla(187, 71%, 82%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-200"]  { background-color: hsla(187, 72%, 71%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-300"]  { background-color: hsla(187, 71%, 59%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-400"]  { background-color: hsla(187, 71%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan"],
-    html /deep/ [foreground]:not([disabled])[background="cyan-500"]  { background-color: hsla(187, 100%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-600"]  { background-color: hsla(187, 100%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-700"]  { background-color: hsla(186, 100%, 33%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-800"]  { background-color: hsla(185, 100%, 28%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-900"]  { background-color: hsla(182, 100%, 20%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-100a"] { background-color: hsla(180, 100%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-200a"] { background-color: hsla(180, 100%, 55%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-400a"] { background-color: hsla(186, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="cyan-700a"] { background-color: hsla(188, 100%, 42%, 1) !important; }
-
-    /* CYAN FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="cyan-50"]   { color: hsla(187, 72%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-100"]  { color: hsla(187, 71%, 82%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-200"]  { color: hsla(187, 72%, 71%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-300"]  { color: hsla(187, 71%, 59%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-400"]  { color: hsla(187, 71%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan"],
-    html /deep/ [foreground]:not([disabled])[color="cyan-500"]  { color: hsla(187, 100%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-600"]  { color: hsla(187, 100%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-700"]  { color: hsla(186, 100%, 33%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-800"]  { color: hsla(185, 100%, 28%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-900"]  { color: hsla(182, 100%, 20%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-100a"] { color: hsla(180, 100%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-200a"] { color: hsla(180, 100%, 55%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-400a"] { color: hsla(186, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="cyan-700a"] { color: hsla(188, 100%, 42%, 1) !important; }
-
-    /* TEAL BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="teal-50"]   { background-color: hsla(177, 41%, 91%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-100"]  { background-color: hsla(175, 41%, 79%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-200"]  { background-color: hsla(174, 42%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-300"]  { background-color: hsla(174, 42%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-400"]  { background-color: hsla(174, 63%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal"],
-    html /deep/ [foreground]:not([disabled])[background="teal-500"]  { background-color: hsla(174, 100%, 29%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-600"]  { background-color: hsla(174, 100%, 27%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-700"]  { background-color: hsla(173, 100%, 24%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-800"]  { background-color: hsla(173, 100%, 21%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-900"]  { background-color: hsla(170, 100%, 15%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-100a"] { background-color: hsla(166, 100%, 83%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-200a"] { background-color: hsla(166, 100%, 70%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-400a"] { background-color: hsla(165, 82%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="teal-700a"] { background-color: hsla(172, 100%, 37%, 1) !important; }
-
-    /* TEAL FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="teal-50"]   { color: hsla(177, 41%, 91%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-100"]  { color: hsla(175, 41%, 79%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-200"]  { color: hsla(174, 42%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-300"]  { color: hsla(174, 42%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-400"]  { color: hsla(174, 63%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal"],
-    html /deep/ [foreground]:not([disabled])[color="teal-500"]  { color: hsla(174, 100%, 29%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-600"]  { color: hsla(174, 100%, 27%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-700"]  { color: hsla(173, 100%, 24%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-800"]  { color: hsla(173, 100%, 21%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-900"]  { color: hsla(170, 100%, 15%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-100a"] { color: hsla(166, 100%, 83%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-200a"] { color: hsla(166, 100%, 70%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-400a"] { color: hsla(165, 82%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="teal-700a"] { color: hsla(172, 100%, 37%, 1) !important; }
-
-    /* GREEN BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="green-50"]   { background-color: hsla(117, 75%, 89%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-100"]  { background-color: hsla(121, 61%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-200"]  { background-color: hsla(120, 54%, 64%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-300"]  { background-color: hsla(120, 49%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-400"]  { background-color: hsla(120, 61%, 43%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green"],
-    html /deep/ [foreground]:not([disabled])[background="green-500"]  { background-color: hsla(119, 62%, 37%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-600"]  { background-color: hsla(119, 89%, 30%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-700"]  { background-color: hsla(118, 89%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-800"]  { background-color: hsla(117, 100%, 22%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-900"]  { background-color: hsla(112, 95%, 17%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-100a"] { background-color: hsla(108, 87%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-200a"] { background-color: hsla(119, 85%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-400a"] { background-color: hsla(120, 84%, 49%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="green-700a"] { background-color: hsla(115, 100%, 39%, 1) !important; }
-
-    /* GREEN FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="green-50"]   { color: hsla(117, 75%, 89%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-100"]  { color: hsla(121, 61%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-200"]  { color: hsla(120, 54%, 64%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-300"]  { color: hsla(120, 49%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-400"]  { color: hsla(120, 61%, 43%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green"],
-    html /deep/ [foreground]:not([disabled])[color="green-500"]  { color: hsla(119, 62%, 37%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-600"]  { color: hsla(119, 89%, 30%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-700"]  { color: hsla(118, 89%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-800"]  { color: hsla(117, 100%, 22%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-900"]  { color: hsla(112, 95%, 17%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-100a"] { color: hsla(108, 87%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-200a"] { color: hsla(119, 85%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-400a"] { color: hsla(120, 84%, 49%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="green-700a"] { color: hsla(115, 100%, 39%, 1) !important; }
-
-    /* LIGHT GREEN BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="light-green-50"]   { background-color: hsla(88, 52%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-100"]  { background-color: hsla(88, 51%, 86%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-200"]  { background-color: hsla(88, 50%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-300"]  { background-color: hsla(88, 50%, 67%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-400"]  { background-color: hsla(88, 50%, 60%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green"],
-    html /deep/ [foreground]:not([disabled])[background="light-green-500"]  { background-color: hsla(88, 50%, 53%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-600"]  { background-color: hsla(89, 46%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-700"]  { background-color: hsla(92, 48%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-800"]  { background-color: hsla(95, 49%, 36%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-900"]  { background-color: hsla(103, 56%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-100a"] { background-color: hsla(88, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-200a"] { background-color: hsla(88, 100%, 67%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-400a"] { background-color: hsla(93, 100%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="light-green-700a"] { background-color: hsla(97, 81%, 48%, 1) !important; }
-
-    /* LIGHT GREEN FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="light-green-50"]   { color: hsla(88, 52%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-100"]  { color: hsla(88, 51%, 86%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-200"]  { color: hsla(88, 50%, 76%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-300"]  { color: hsla(88, 50%, 67%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-400"]  { color: hsla(88, 50%, 60%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green"],
-    html /deep/ [foreground]:not([disabled])[color="light-green-500"]  { color: hsla(88, 50%, 53%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-600"]  { color: hsla(89, 46%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-700"]  { color: hsla(92, 48%, 42%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-800"]  { color: hsla(95, 49%, 36%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-900"]  { color: hsla(103, 56%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-100a"] { color: hsla(88, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-200a"] { color: hsla(88, 100%, 67%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-400a"] { color: hsla(93, 100%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="light-green-700a"] { color: hsla(97, 81%, 48%, 1) !important; }
-
-    /* LIME BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="lime-50"]   { background-color: hsla(66, 71%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-100"]  { background-color: hsla(65, 69%, 86%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-200"]  { background-color: hsla(66, 71%, 77%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-300"]  { background-color: hsla(66, 70%, 68%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-400"]  { background-color: hsla(66, 70%, 61%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime"],
-    html /deep/ [foreground]:not([disabled])[background="lime-500"]  { background-color: hsla(66, 70%, 54%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-600"]  { background-color: hsla(64, 60%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-700"]  { background-color: hsla(62, 61%, 44%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-800"]  { background-color: hsla(60, 63%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-900"]  { background-color: hsla(54, 70%, 30%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-100a"] { background-color: hsla(65, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-200a"] { background-color: hsla(65, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-400a"] { background-color: hsla(73, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="lime-700a"] { background-color: hsla(75, 100%, 46%, 1) !important; }
-
-    /* LIME FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="lime-50"]   { color: hsla(66, 71%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-100"]  { color: hsla(65, 69%, 86%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-200"]  { color: hsla(66, 71%, 77%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-300"]  { color: hsla(66, 70%, 68%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-400"]  { color: hsla(66, 70%, 61%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime"],
-    html /deep/ [foreground]:not([disabled])[color="lime-500"]  { color: hsla(66, 70%, 54%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-600"]  { color: hsla(64, 60%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-700"]  { color: hsla(62, 61%, 44%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-800"]  { color: hsla(60, 63%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-900"]  { color: hsla(54, 70%, 30%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-100a"] { color: hsla(65, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-200a"] { color: hsla(65, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-400a"] { color: hsla(73, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="lime-700a"] { color: hsla(75, 100%, 46%, 1) !important; }
-
-    /* YELLOW BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="yellow-50"]   { background-color: hsla(55, 100%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-100"]  { background-color: hsla(54, 100%, 88%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-200"]  { background-color: hsla(54, 100%, 81%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-300"]  { background-color: hsla(54, 100%, 73%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-400"]  { background-color: hsla(54, 100%, 67%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow"],
-    html /deep/ [foreground]:not([disabled])[background="yellow-500"]  { background-color: hsla(54, 100%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-600"]  { background-color: hsla(49, 98%, 60%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-700"]  { background-color: hsla(43, 96%, 58%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-800"]  { background-color: hsla(37, 95%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-900"]  { background-color: hsla(28, 92%, 53%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-100a"] { background-color: hsla(60, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-200a"] { background-color: hsla(60, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-400a"] { background-color: hsla(55, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="yellow-700a"] { background-color: hsla(50, 100%, 50%, 1) !important; }
-
-    /* YELLOW FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="yellow-50"]   { color: hsla(55, 100%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-100"]  { color: hsla(54, 100%, 88%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-200"]  { color: hsla(54, 100%, 81%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-300"]  { color: hsla(54, 100%, 73%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-400"]  { color: hsla(54, 100%, 67%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow"],
-    html /deep/ [foreground]:not([disabled])[color="yellow-500"]  { color: hsla(54, 100%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-600"]  { color: hsla(49, 98%, 60%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-700"]  { color: hsla(43, 96%, 58%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-800"]  { color: hsla(37, 95%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-900"]  { color: hsla(28, 92%, 53%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-100a"] { color: hsla(60, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-200a"] { color: hsla(60, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-400a"] { color: hsla(55, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="yellow-700a"] { color: hsla(50, 100%, 50%, 1) !important; }
-
-    /* AMBER BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="amber-50"]   { background-color: hsla(46, 100%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-100"]  { background-color: hsla(45, 100%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-200"]  { background-color: hsla(45, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-300"]  { background-color: hsla(46, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-400"]  { background-color: hsla(45, 100%, 58%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber"],
-    html /deep/ [foreground]:not([disabled])[background="amber-500"]  { background-color: hsla(45, 100%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-600"]  { background-color: hsla(42, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-700"]  { background-color: hsla(38, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-800"]  { background-color: hsla(34, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-900"]  { background-color: hsla(26, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-100a"] { background-color: hsla(48, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-200a"] { background-color: hsla(47, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-400a"] { background-color: hsla(46, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="amber-700a"] { background-color: hsla(40, 100%, 50%, 1) !important; }
-
-    /* AMBER FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="amber-50"]   { color: hsla(46, 100%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-100"]  { color: hsla(45, 100%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-200"]  { color: hsla(45, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-300"]  { color: hsla(46, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-400"]  { color: hsla(45, 100%, 58%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber"],
-    html /deep/ [foreground]:not([disabled])[color="amber-500"]  { color: hsla(45, 100%, 51%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-600"]  { color: hsla(42, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-700"]  { color: hsla(38, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-800"]  { color: hsla(34, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-900"]  { color: hsla(26, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-100a"] { color: hsla(48, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-200a"] { color: hsla(47, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-400a"] { color: hsla(46, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="amber-700a"] { color: hsla(40, 100%, 50%, 1) !important; }
-
-    /* ORANGE BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="orange-50"]   { background-color: hsla(37, 100%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-100"]  { background-color: hsla(36, 100%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-200"]  { background-color: hsla(36, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-300"]  { background-color: hsla(36, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-400"]  { background-color: hsla(36, 100%, 57%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange"],
-    html /deep/ [foreground]:not([disabled])[background="orange-500"]  { background-color: hsla(36, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-600"]  { background-color: hsla(33, 100%, 49%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-700"]  { background-color: hsla(30, 100%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-800"]  { background-color: hsla(27, 100%, 47%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-900"]  { background-color: hsla(21, 100%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-100a"] { background-color: hsla(38, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-200a"] { background-color: hsla(34, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-400a"] { background-color: hsla(34, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="orange-700a"] { background-color: hsla(26, 100%, 50%, 1) !important; }
-
-    /* ORANGE FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="orange-50"]   { color: hsla(37, 100%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-100"]  { color: hsla(36, 100%, 85%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-200"]  { color: hsla(36, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-300"]  { color: hsla(36, 100%, 65%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-400"]  { color: hsla(36, 100%, 57%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange"],
-    html /deep/ [foreground]:not([disabled])[color="orange-500"]  { color: hsla(36, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-600"]  { color: hsla(33, 100%, 49%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-700"]  { color: hsla(30, 100%, 48%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-800"]  { color: hsla(27, 100%, 47%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-900"]  { color: hsla(21, 100%, 45%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-100a"] { color: hsla(38, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-200a"] { color: hsla(34, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-400a"] { color: hsla(34, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="orange-700a"] { color: hsla(26, 100%, 50%, 1) !important; }
-
-    /* DEEP ORANGE BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-50"]   { background-color: hsla(6, 71%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-100"]  { background-color: hsla(14, 100%, 87%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-200"]  { background-color: hsla(14, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-300"]  { background-color: hsla(14, 100%, 70%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-400"]  { background-color: hsla(14, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange"],
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-500"]  { background-color: hsla(14, 100%, 57%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-600"]  { background-color: hsla(14, 91%, 54%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-700"]  { background-color: hsla(14, 80%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-800"]  { background-color: hsla(14, 82%, 46%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-900"]  { background-color: hsla(14, 88%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-100a"] { background-color: hsla(14, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-200a"] { background-color: hsla(14, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-400a"] { background-color: hsla(14, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="deep-orange-700a"] { background-color: hsla(12, 100%, 43%, 1) !important; }
-
-    /* DEEP ORANGE FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-50"]   { color: hsla(6, 71%, 95%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-100"]  { color: hsla(14, 100%, 87%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-200"]  { color: hsla(14, 100%, 78%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-300"]  { color: hsla(14, 100%, 70%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-400"]  { color: hsla(14, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange"],
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-500"]  { color: hsla(14, 100%, 57%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-600"]  { color: hsla(14, 91%, 54%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-700"]  { color: hsla(14, 80%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-800"]  { color: hsla(14, 82%, 46%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-900"]  { color: hsla(14, 88%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-100a"] { color: hsla(14, 100%, 75%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-200a"] { color: hsla(14, 100%, 63%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-400a"] { color: hsla(14, 100%, 50%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="deep-orange-700a"] { color: hsla(12, 100%, 43%, 1) !important; }
-
-    /* BROWN BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="brown-50"]  { background-color: hsla(20, 16%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-100"] { background-color: hsla(16, 16%, 81%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-200"] { background-color: hsla(15, 15%, 69%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-300"] { background-color: hsla(16, 15%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-400"] { background-color: hsla(16, 18%, 47%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown"],
-    html /deep/ [foreground]:not([disabled])[background="brown-500"] { background-color: hsla(16, 25%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-600"] { background-color: hsla(15, 25%, 34%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-700"] { background-color: hsla(14, 26%, 29%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-800"] { background-color: hsla(11, 26%, 24%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="brown-900"] { background-color: hsla(9, 28%, 19%, 1) !important; }
-
-    /* BROWN FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="brown-50"]  { color: hsla(20, 16%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-100"] { color: hsla(16, 16%, 81%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-200"] { color: hsla(15, 15%, 69%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-300"] { color: hsla(16, 15%, 56%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-400"] { color: hsla(16, 18%, 47%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown"],
-    html /deep/ [foreground]:not([disabled])[color="brown-500"] { color: hsla(16, 25%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-600"] { color: hsla(15, 25%, 34%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-700"] { color: hsla(14, 26%, 29%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-800"] { color: hsla(11, 26%, 24%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="brown-900"] { color: hsla(9, 28%, 19%, 1) !important; }
-
-    /* GREY BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="grey-50"]  { background-color: hsla(0, 0%, 98%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-100"] { background-color: hsla(0, 0%, 96%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-200"] { background-color: hsla(0, 0%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-300"] { background-color: hsla(0, 0%, 88%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-400"] { background-color: hsla(0, 0%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey"],
-    html /deep/ [foreground]:not([disabled])[background="grey-500"] { background-color: hsla(0, 0%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-600"] { background-color: hsla(0, 0%, 46%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-700"] { background-color: hsla(0, 0%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-800"] { background-color: hsla(0, 0%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="grey-900"] { background-color: hsla(0, 0%, 13%, 1) !important; }
-
-    /* GREY FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="grey-50"]  { color: hsla(0, 0%, 98%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-100"] { color: hsla(0, 0%, 96%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-200"] { color: hsla(0, 0%, 93%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-300"] { color: hsla(0, 0%, 88%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-400"] { color: hsla(0, 0%, 74%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey"],
-    html /deep/ [foreground]:not([disabled])[color="grey-500"] { color: hsla(0, 0%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-600"] { color: hsla(0, 0%, 46%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-700"] { color: hsla(0, 0%, 38%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-800"] { color: hsla(0, 0%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="grey-900"] { color: hsla(0, 0%, 13%, 1) !important; }
-
-    /* BLUE GREY BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-50"]  { background-color: hsla(204, 15%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-100"] { background-color: hsla(198, 16%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-200"] { background-color: hsla(200, 15%, 73%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-300"] { background-color: hsla(200, 16%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-400"] { background-color: hsla(200, 15%, 54%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey"],
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-500"] { background-color: hsla(200, 18%, 46%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-600"] { background-color: hsla(199, 18%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-700"] { background-color: hsla(199, 18%, 33%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-800"] { background-color: hsla(200, 18%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="blue-grey-900"] { background-color: hsla(200, 19%, 18%, 1) !important; }
-
-    /* BLUE GREY FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-50"]  { color: hsla(204, 15%, 94%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-100"] { color: hsla(198, 16%, 84%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-200"] { color: hsla(200, 15%, 73%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-300"] { color: hsla(200, 16%, 62%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-400"] { color: hsla(200, 15%, 54%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey"],
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-500"] { color: hsla(200, 18%, 46%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-600"] { color: hsla(199, 18%, 40%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-700"] { color: hsla(199, 18%, 33%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-800"] { color: hsla(200, 18%, 26%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="blue-grey-900"] { color: hsla(200, 19%, 18%, 1) !important; }
-
-    /* BLACK AND WHITE BACKGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[background="black"] { background-color: hsla(0, 0%, 0%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[background="white"] { background-color: hsla(0, 0%, 100%, 1) !important; }
-
-    /* BLACK AND WHITE FOREGROUNDS */
-
-    html /deep/ [foreground]:not([disabled])[color="black"] { color: hsla(0, 0%, 0%, 1) !important; }
-    html /deep/ [foreground]:not([disabled])[color="white"] { color: hsla(0, 0%, 100%, 1) !important; }
-
-</style>
-
 <polymer-element name="mat-palette" constructor="MATPaletteElement">
 
     <template>
@@ -1021,47 +71,284 @@ This element is used to manage the meterial palettes.
              * @readonly
              */
             palettes: {
-                light: [
-                    'red-50', 'red-100', 'red-200', 'red-300', 'red-400', 'red-100a',
-                    'pink-50', 'pink-100', 'pink-200', 'pink-300', 'pink-400', 'pink-100a',
-                    'purple-50', 'purple-100', 'purple-200', 'purple-100a',
-                    'deep-purple-50', 'deep-purple-100', 'deep-purple-200', 'deep-purple-100a',
-                    'indigo-50', 'indigo-100', 'indigo-200', 'indigo-100a',
-                    'blue-50', 'blue-100', 'blue-200', 'blue-300', 'blue-400', 'blue-100a',
-                    'light-blue-50', 'light-blue-100', 'light-blue-200', 'light-blue-300', 'light-blue-400', 'light-blue-100a', 'light-blue-200a', 'light-blue-400a',
-                    'cyan-50', 'cyan-100', 'cyan-200', 'cyan-300', 'cyan-400', 'cyan-100a', 'cyan-200a', 'cyan-400a', 'cyan-700a',
-                    'teal-50', 'teal-100', 'teal-200', 'teal-300', 'teal-400', 'teal-100a', 'teal-200a', 'teal-400a', 'teal-700a',
-                    'green-50', 'green-100', 'green-200', 'green-300', 'green-400', 'green-100a', 'green-200a', 'green-400a', 'green-700a',
-                    'lime-green', 'lime-green-50', 'lime-green-100', 'lime-green-200', 'lime-green-300', 'lime-green-400', 'lime-green-500', 'lime-green-600', 'lime-green-700', 'lime-green-100a','lime-green-200a', 'lime-green-400a', 'lime-green-700a',
-                    'lime', 'lime-50', 'lime-100', 'lime-200', 'lime-300', 'lime-400', 'lime-500', 'lime-600', 'lime-700', 'lime-800', 'lime-100a', 'lime-200a', 'lime-400a', 'lime-700a',
-                    'yellow', 'yellow-50', 'yellow-100', 'yellow-200', 'yellow-300', 'yellow-400', 'yellow-500', 'yellow-600', 'yellow-700', 'yellow-800', 'yellow-900', 'yellow-100a', 'yellow-200a', 'yellow-400a', 'yellow-700a',
-                    'amber', 'amber-50', 'amber-100', 'amber-200', 'amber-300', 'amber-400', 'amber-500', 'amber-600', 'amber-700', 'amber-800', 'amber-900', 'amber-100a', 'amber-200a', 'amber-400a', 'amber-700a', 'orange-50',
-                    'orange', 'orange-100', 'orange-200', 'orange-300', 'orange-400', 'orange-500', 'orange-600', 'orange-700', 'orange-100a', 'orange-200a', 'orange-400a', 'orange-700a',
-                    'deep-orange-50', 'deep-orange-100', 'deep-orange-200', 'deep-orange-300', 'deep-orange-400', 'deep-orange-100a', 'deep-orange-200a',
-                    'brown-50', 'brown-100', 'brown-200',
-                    'grey', 'grey-50', 'grey-100', 'grey-200', 'grey-300', 'grey-400', 'grey-500',
-                    'blue-grey-50', 'blue-grey-100', 'blue-grey-200', 'blue-grey-300',
-                    'white'
-                ],
-                dark: [
-                    'red', 'red-500', 'red-600', 'red-700', 'red-800', 'red-900', 'red-200a', 'red-400a', 'red-700a',
-                    'pink', 'pink-500', 'pink-600', 'pink-700', 'pink-800', 'pink-900', 'pink-200a', 'pink-400a', 'pink-700a',
-                    'purple', 'purple-300', 'purple-400', 'purple-500', 'purple-600', 'purple-700', 'purple-800', 'purple-900', 'purple-200a', 'purple-400a', 'purple-700a',
-                    'deep-purple', 'deep-purple-300', 'deep-purple-400', 'deep-purple-500', 'deep-purple-600', 'deep-purple-700', 'deep-purple-800', 'deep-purple-900', 'deep-purple-200a', 'deep-purple-400a', 'deep-purple-700a',
-                    'indigo', 'indigo-300', 'indigo-400', 'indigo-500', 'indigo-600', 'indigo-700', 'indigo-800', 'indigo-900', 'indigo-200a', 'indigo-400a', 'indigo-700a',
-                    'blue', 'blue-500', 'blue-600', 'blue-700', 'blue-800', 'blue-900', 'blue-200a', 'blue-400a', 'blue-700a',
-                    'light-blue', 'light-blue-500', 'light-blue-600', 'light-blue-700', 'light-blue-800', 'light-blue-900', 'light-blue-700a',
-                    'cyan', 'cyan-500', 'cyan-600', 'cyan-700', 'cyan-800', 'cyan-900',
-                    'teal', 'teal-500', 'teal-600', 'teal-700', 'teal-800', 'teal-900',
-                    'green', 'green-500', 'green-600', 'green-700', 'green-800', 'green-900',
-                    'light-green-800', 'light-green-900', 'lime-green-900',
-                    'orange-800', 'orange-900',
-                    'deep-orange', 'deep-orange-500', 'deep-orange-600', 'deep-orange-700', 'deep-orange-800', 'deep-orange-900', 'deep-orange-400a', 'deep-orange-700a',
-                    'brown', 'brown-300', 'brown-400', 'brown-500', 'brown-600', 'brown-700', 'brown-800', 'brown-900', 'brown-400a', 'brown-700a',
-                    'grey-600', 'grey-700', 'grey-800', 'grey-900',
-                    'blue-grey', 'blue-grey-400', 'blue-grey-500', 'blue-grey-600', 'blue-grey-700', 'blue-grey-800', 'blue-grey-900',
-                    'black'
-                ]
+                light: {
+                    'amber': '#FFC107',
+                    'amber-100': '#FFECB3',
+                    'amber-200': '#FFE082',
+                    'amber-300': '#FFD54F',
+                    'amber-400': '#FFCA28',
+                    'amber-50': '#FFF8E1',
+                    'amber-500': '#FFC107',
+                    'amber-600': '#FFB300',
+                    'amber-700': '#FFA000',
+                    'amber-800': '#FF8F00',
+                    'amber-900': '#FF6F00',
+                    'amber-a100': '#FFE57F',
+                    'amber-a200': '#FFD740',
+                    'amber-a400': '#FFC400',
+                    'amber-a700': '#FFAB00',
+                    'blue-100': '#BBDEFB',
+                    'blue-200': '#90CAF9',
+                    'blue-300': '#64B5F6',
+                    'blue-400': '#42A5F5',
+                    'blue-50': '#E3F2FD',
+                    'blue-a100': '#82B1FF',
+                    'blue-grey-100': '#CFD8DC',
+                    'blue-grey-200': '#B0BEC5',
+                    'blue-grey-300': '#90A4AE',
+                    'blue-grey-50': '#ECEFF1',
+                    'brown-100': '#D7CCC8',
+                    'brown-200': '#BCAAA4',
+                    'brown-50': '#EFEBE9',
+                    'cyan-100': '#B2EBF2',
+                    'cyan-200': '#80DEEA',
+                    'cyan-300': '#4DD0E1',
+                    'cyan-400': '#26C6DA',
+                    'cyan-50': '#E0F7FA',
+                    'cyan-a100': '#84FFFF',
+                    'cyan-a200': '#18FFFF',
+                    'cyan-a400': '#00E5FF',
+                    'cyan-a700': '#00B8D4',
+                    'deep-orange-100': '#FFCCBC',
+                    'deep-orange-200': '#FFAB91',
+                    'deep-orange-300': '#FF8A65',
+                    'deep-orange-400': '#FF7043',
+                    'deep-orange-50': '#FBE9E7',
+                    'deep-orange-a100': '#FF9E80',
+                    'deep-orange-a200': '#FF6E40',
+                    'deep-purple-100': '#D1C4E9',
+                    'deep-purple-200': '#B39DDB',
+                    'deep-purple-50': '#EDE7F6',
+                    'deep-purple-a100': '#B388FF',
+                    'green-100': '#C8E6C9',
+                    'green-200': '#A5D6A7',
+                    'green-300': '#81C784',
+                    'green-400': '#66BB6A',
+                    'green-50': '#E8F5E9',
+                    'green-a100': '#B9F6CA',
+                    'green-a200': '#69F0AE',
+                    'green-a400': '#00E676',
+                    'green-a700': '#00C853',
+                    'grey': '#9E9E9E',
+                    'grey-100': '#F5F5F5',
+                    'grey-200': '#EEEEEE',
+                    'grey-300': '#E0E0E0',
+                    'grey-400': '#BDBDBD',
+                    'grey-50': '#FAFAFA',
+                    'grey-500': '#9E9E9E',
+                    'indigo-100': '#C5CAE9',
+                    'indigo-200': '#9FA8DA',
+                    'indigo-50': '#E8EAF6',
+                    'indigo-a100': '#8C9EFF',
+                    'light-blue-100': '#B3E5FC',
+                    'light-blue-200': '#81D4FA',
+                    'light-blue-300': '#4FC3F7',
+                    'light-blue-400': '#29B6F6',
+                    'light-blue-50': '#E1F5FE',
+                    'light-blue-a100': '#80D8FF',
+                    'light-blue-a200': '#40C4FF',
+                    'light-blue-a400': '#00B0FF',
+                    'light-green': '#8BC34A',
+                    'light-green-100': '#DCEDC8',
+                    'light-green-200': '#C5E1A5',
+                    'light-green-300': '#AED581',
+                    'light-green-400': '#9CCC65',
+                    'light-green-50': '#F1F8E9',
+                    'light-green-500': '#8BC34A',
+                    'light-green-600': '#7CB342',
+                    'light-green-700': '#689F38',
+                    'light-green-a100': '#CCFF90',
+                    'light-green-a200': '#B2FF59',
+                    'light-green-a400': '#76FF03',
+                    'light-green-a700': '#64DD17',
+                    'lime': '#CDDC39',
+                    'lime-100': '#F0F4C3',
+                    'lime-200': '#E6EE9C',
+                    'lime-300': '#DCE775',
+                    'lime-400': '#D4E157',
+                    'lime-50': '#F9FBE7',
+                    'lime-500': '#CDDC39',
+                    'lime-600': '#C0CA33',
+                    'lime-700': '#AFB42B',
+                    'lime-800': '#9E9D24',
+                    'lime-a100': '#F4FF81',
+                    'lime-a200': '#EEFF41',
+                    'lime-a400': '#C6FF00',
+                    'lime-a700': '#AEEA00',
+                    'orange': '#FF9800',
+                    'orange-100': '#FFE0B2',
+                    'orange-200': '#FFCC80',
+                    'orange-300': '#FFB74D',
+                    'orange-400': '#FFA726',
+                    'orange-50': '#FFF3E0',
+                    'orange-500': '#FF9800',
+                    'orange-600': '#FB8C00',
+                    'orange-700': '#F57C00',
+                    'orange-a100': '#FFD180',
+                    'orange-a200': '#FFAB40',
+                    'orange-a400': '#FF9100',
+                    'orange-a700': '#FF6D00',
+                    'pink-100': '#F8BBD0',
+                    'pink-200': '#F48FB1',
+                    'pink-300': '#F06292',
+                    'pink-400': '#EC407A',
+                    'pink-50': '#FCE4EC',
+                    'pink-a100': '#FF80AB',
+                    'purple-100': '#E1BEE7',
+                    'purple-200': '#CE93D8',
+                    'purple-50': '#F3E5F5',
+                    'purple-a100': '#EA80FC',
+                    'red-100': '#FFCDD2',
+                    'red-200': '#EF9A9A',
+                    'red-300': '#E57373',
+                    'red-400': '#EF5350',
+                    'red-50': '#FFEBEE',
+                    'red-a100': '#FF8A80',
+                    'teal-100': '#B2DFDB',
+                    'teal-200': '#80CBC4',
+                    'teal-300': '#4DB6AC',
+                    'teal-400': '#26A69A',
+                    'teal-50': '#E0F2F1',
+                    'teal-a100': '#A7FFEB',
+                    'teal-a200': '#64FFDA',
+                    'teal-a400': '#1DE9B6',
+                    'teal-a700': '#00BFA5',
+                    'white': '#FFFFFF',
+                    'yellow': '#FFEB3B',
+                    'yellow-100': '#FFF9C4',
+                    'yellow-200': '#FFF59D',
+                    'yellow-300': '#FFF176',
+                    'yellow-400': '#FFEE58',
+                    'yellow-50': '#FFFDE7',
+                    'yellow-500': '#FFEB3B',
+                    'yellow-600': '#FDD835',
+                    'yellow-700': '#FBC02D',
+                    'yellow-800': '#F9A825',
+                    'yellow-900': '#F57F17',
+                    'yellow-a100': '#FFFF8D',
+                    'yellow-a200': '#FFFF00',
+                    'yellow-a400': '#FFEA00',
+                    'yellow-a700': '#FFD600'
+                },
+                dark: {
+                    'black': '#000000',
+                    'blue': '#2196F3',
+                    'blue-500': '#2196F3',
+                    'blue-600': '#1E88E5',
+                    'blue-700': '#1976D2',
+                    'blue-800': '#1565C0',
+                    'blue-900': '#0D47A1',
+                    'blue-a200': '#448AFF',
+                    'blue-a400': '#2979FF',
+                    'blue-a700': '#2962FF',
+                    'blue-grey': '#607D8B',
+                    'blue-grey-400': '#78909C',
+                    'blue-grey-500': '#607D8B',
+                    'blue-grey-600': '#546E7A',
+                    'blue-grey-700': '#455A64',
+                    'blue-grey-800': '#37474F',
+                    'blue-grey-900': '#263238',
+                    'brown': '#795548',
+                    'brown-300': '#A1887F',
+                    'brown-400': '#8D6E63',
+                    'brown-500': '#795548',
+                    'brown-600': '#6D4C41',
+                    'brown-700': '#5D4037',
+                    'brown-800': '#4E342E',
+                    'brown-900': '#3E2723',
+                    'cyan': '#00BCD4',
+                    'cyan-500': '#00BCD4',
+                    'cyan-600': '#00ACC1',
+                    'cyan-700': '#0097A7',
+                    'cyan-800': '#00838F',
+                    'cyan-900': '#006064',
+                    'deep-orange': '#FF5722',
+                    'deep-orange-500': '#FF5722',
+                    'deep-orange-600': '#F4511E',
+                    'deep-orange-700': '#E64A19',
+                    'deep-orange-800': '#D84315',
+                    'deep-orange-900': '#BF360C',
+                    'deep-orange-a400': '#FF3D00',
+                    'deep-orange-a700': '#DD2C00',
+                    'deep-purple-300': '#9575CD',
+                    'deep-purple-400': '#7E57C2',
+                    'deep-purple-500': '#673AB7',
+                    'deep-purple-600': '#5E35B1',
+                    'deep-purple-700': '#512DA8',
+                    'deep-purple-800': '#4527A0',
+                    'deep-purple-900': '#311B92',
+                    'deep-purple-a200': '#7C4DFF',
+                    'deep-purple-a400': '#651FFF',
+                    'deep-purple-a700': '#6200EA',
+                    'green': '#4CAF50',
+                    'green-500': '#4CAF50',
+                    'green-600': '#43A047',
+                    'green-700': '#388E3C',
+                    'green-800': '#2E7D32',
+                    'green-900': '#1B5E20',
+                    'grey-600': '#757575',
+                    'grey-700': '#616161',
+                    'grey-800': '#424242',
+                    'grey-900': '#212121',
+                    'indigo': '#3F51B5',
+                    'indigo-300': '#7986CB',
+                    'indigo-400': '#5C6BC0',
+                    'indigo-500': '#3F51B5',
+                    'indigo-600': '#3949AB',
+                    'indigo-700': '#303F9F',
+                    'indigo-800': '#283593',
+                    'indigo-900': '#1A237E',
+                    'indigo-a200': '#536DFE',
+                    'indigo-a400': '#3D5AFE',
+                    'indigo-a700': '#304FFE',
+                    'light-blue': '#03A9F4',
+                    'light-blue-500': '#03A9F4',
+                    'light-blue-600': '#039BE5',
+                    'light-blue-700': '#0288D1',
+                    'light-blue-800': '#0277BD',
+                    'light-blue-900': '#01579B',
+                    'light-blue-a700': '#0091EA',
+                    'light-green-800': '#558B2F',
+                    'light-green-900': '#33691E',
+                    'lime-900': '#827717',
+                    'orange-800': '#EF6C00',
+                    'orange-900': '#E65100',
+                    'pink': '#E91E63',
+                    'pink-500': '#E91E63',
+                    'pink-600': '#D81B60',
+                    'pink-700': '#C2185B',
+                    'pink-800': '#AD1457',
+                    'pink-900': '#880E4F',
+                    'pink-a200': '#FF4081',
+                    'pink-a400': '#F50057',
+                    'pink-a700': '#C51162',
+                    'purple': '#9C27B0',
+                    'purple-300': '#BA68C8',
+                    'purple-400': '#AB47BC',
+                    'purple-500': '#9C27B0',
+                    'purple-600': '#8E24AA',
+                    'purple-700': '#7B1FA2',
+                    'purple-800': '#6A1B9A',
+                    'purple-900': '#4A148C',
+                    'purple-a200': '#E040FB',
+                    'purple-a400': '#D500F9',
+                    'purple-a700': '#AA00FF',
+                    'red': '#F44336',
+                    'red-500': '#F44336',
+                    'red-600': '#E53935',
+                    'red-700': '#D32F2F',
+                    'red-800': '#C62828',
+                    'red-900': '#B71C1C',
+                    'red-a200': '#FF5252',
+                    'red-a400': '#FF1744',
+                    'red-a700': '#D50000',
+                    'teal': '#009688',
+                    'teal-500': '#009688',
+                    'teal-600': '#00897B',
+                    'teal-700': '#00796B',
+                    'teal-800': '#00695C',
+                    'teal-900': '#004D40'
+                }
             }
         });
     </script>
