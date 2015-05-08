@@ -26,9 +26,5 @@
   "dependencies": {
     "expandjs": "ExpandJS/expandjs",
     "polymer": "Polymer/polymer#^0.5"
-  },
-  "devDependencies": {
-    "mat-demo": "ExpandJS/mat-demo",
-    "mat-paper": "ExpandJS/mat-paper"
   }
 }
