@@ -1,7 +1,7 @@
 {
   "name": "mat-palette",
   "license": "BSD-3-Clause",
-  "version": "0.8.10",
+  "version": "0.8.11",
   "description": "A custom element used to manage a Material Design palette",
   "homepage": "http://expandjs.com/elements/mat-palette",
   "authors": [
